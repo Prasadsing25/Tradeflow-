@@ -21,7 +21,7 @@ function Home() {
         e.preventDefault();
         const endpoint = isSignup ? "signup" : "login";
         try {
-            const { data } = await axios.post(`http://localhost:3000/${endpoint}`, formData);
+            const { data } = await axios.post(`https://tradeflowvista.onrender.com/${endpoint}`, formData);
             if (data.success) {
                 localStorage.setItem("user", JSON.stringify(data.user));
                 setIsLoggedIn(true);
