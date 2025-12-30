@@ -19,7 +19,7 @@ const SellActionWindows = ({ uid }) => {
     }, [uid]);
 
     const handleSellClick = () => {
-        axios.post('http://localhost:3000/newOrder', {
+        axios.post('https://tradeflowvista.onrender.com/newOrder', {
             name: uid,
             qty: stockQuantity,
             price: stockPrice,
