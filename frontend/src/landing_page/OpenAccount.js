@@ -2,6 +2,7 @@ import React from 'react';
 
 function OpenAccount() {
     const handleSignupRedirect = () => {
+        e.preventDefault();
         window.location.href = "https://tradeflow-dashboard.onrender.com";
     };
 
