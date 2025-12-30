@@ -14,12 +14,12 @@ const uri = process.env.MONGO_URL;
 const app = express();
 
 app.use(cors({
-    origin:[ 
-        "https://tradeflow-frontend.onrender.com",  // Your actual Render Frontend URL
-        "https://tradeflow-dashboard.onrender.com"
-    ] ,// Your Dashboard URL
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true
+    origin: [
+        "https://tradeflow-frontend.onrender.com",  // Your Frontend URL
+        "https://tradeflow-dashboard.onrender.com" // Your Dashboard URL
+    ],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"]
 }));
 app.use(bodyParser.json());
 app.use(express.json());
