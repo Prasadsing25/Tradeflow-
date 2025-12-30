@@ -1,0 +1,900 @@
+/* --- GLOBAL STYLES --- */
+
+body {
+    margin: 0;
+    /* Main body text color: Darker for better contrast/readability */
+    color: #333333;
+    /* A standard, reliable font stack */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Use a light gray background for a subtle lift off the pure white */
+    background-color: #f7f7f7; 
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* --- UTILITY CLASSES --- */
+.up {
+    color: #00a651; /* Deeper Green */
+}
+
+.down, .index-points {
+    color: #d93d3d; /* Deeper Red/Orange */
+}
+
+.align-left {
+    text-align: left;
+}
+
+/* --- BUTTONS --- */
+.btn {
+    text-decoration: none;
+    padding: 8px 16px; /* Slightly less vertical padding */
+    border-radius: 4px; /* Rounded corners for a modern feel */
+    color: #fff;
+    font-weight: 500; /* Bolder text */
+    transition: background-color 0.2s ease; /* Smooth hover transition */
+    margin-right: 4px; /* Consistent spacing */
+    margin-left: 4px;
+}
+
+.btn-green {
+    background: #4caf50;
+    border: none;
+}
+
+.btn-blue {
+    background: #1e88e5; /* A deeper, more professional blue */
+    border: none;
+}
+
+.btn-blue:hover {
+    background: #42a5f5;
+}
+
+.btn-green:hover {
+    background: #66bb6a;
+}
+
+/* General Button for Orders (No-Orders section) */
+.btn:not(.btn-green):not(.btn-blue) {
+    background: #1e88e5; 
+}
+
+.btn:not(.btn-green):not(.btn-blue):hover {
+    background: #42a5f5;
+}
+
+/* --- LAYOUT CONTAINERS  --- */
+.dashboard-container {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    /* Align content to the top */
+    align-items: center; 
+    box-sizing: border-box;
+}
+
+.content {
+    flex-basis: 68%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    /* Adjusted padding */
+    padding: 3% 2%; 
+    background-color: #ffffff; 
+}
+
+.orders {
+    width: 100%;
+    height: 90vh;
+}
+
+/* --- TOPBAR / NAVIGATION --- */
+.topbar-container {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    /* Use a more subtle box shadow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+    box-sizing: border-box;
+    z-index: 9;
+    background-color: #ffffff; 
+}
+
+.indices-container {
+    flex-basis: 32%;
+    height: 100%;
+    padding: 10px 20px;
+    /* Lighter, less intrusive border color */
+    border-right: 1px solid #eeeeee; 
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nifty, .sensex {
+    flex-basis: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: -2; 
+}
+
+.nifty > *, .sensex > * {
+    margin-right: 8px;
+}
+
+.index {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #555555; 
+    white-space: nowrap;
+}
+
+.index-points {
+    font-size: 0.9rem;
+    font-weight: 600; 
+}
+
+.percent {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #999999;
+}
+
+.index:hover {
+    cursor: pointer;
+}
+
+/* Menu Container */
+.menu-container {
+    flex-basis: 68%; 
+    height: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 30px;
+    height: 20px;
+}
+
+.menus {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.menus ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menus p {
+    display: inline-block;
+    margin-right: 30px;
+    text-decoration: none;
+}
+
+.menu {
+    font-size: 0.85rem; 
+    font-weight: 500; 
+    color: #777777; 
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.menu.selected, .menu:hover {
+    color: #ff8c00; 
+}
+
+hr {
+    /* Vertical divider */
+    border: none;
+    border-left: 0.8px solid #f1f1f1; 
+    height: 25px; 
+    margin: 0 15px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: 20px;
+    transition: all 0.2s ease;
+}
+
+.profile .avatar {
+    width: 35px; 
+    height: 35px; 
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: 400;
+    /* Use a more neutral, professional color scheme */
+    background: #e3f2fd; 
+    color: #42a5f5; 
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+}
+
+.profile .username {
+    font-size: 0.9rem; 
+    font-weight: 400;
+    color: #444;
+    transition: color 0.2s ease;
+}
+
+.profile:hover {
+    cursor: pointer;
+}
+
+.profile:hover .username {
+    color: #ff8c00;
+}
+
+
+
+/* Funds (Top Right Info) */
+.funds {
+    width: 100%;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px; 
+}
+
+.funds p {
+    font-size: 0.85rem;
+    color: #999999; 
+    margin-right: 10px;
+}
+
+
+
+.section-icon {
+    transform: scale(1);
+    color: #666666; 
+    margin-right: 10px;
+    padding: 0;
+}
+
+.col span p {
+    font-size: 1.8rem;
+    font-weight: 400; 
+    color: #444444;
+    display: inline-block;
+    margin: 0;
+}
+
+/* Table Card Styles (Individual Stat Block) */
+.table {
+    border: 1px solid #eeeeee; 
+    border-radius: 6px; 
+    padding: 20px 25px; 
+    background-color: #ffffff; 
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04); 
+    margin-bottom: 20px;
+}
+
+.table .data {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.table .data > * {
+    margin-bottom: 15px; 
+}
+
+.table .data p:first-child {
+    font-size: 0.9rem;
+    color: #999999;
+    margin-bottom: 0;
+}
+
+.imp {
+    font-size: 1.2rem; 
+    font-weight: 500; 
+    color: #333333;
+}
+
+.colored {
+    color: #1e88e5; 
+}
+
+.table hr {
+    border: none;
+    background: #f1f1f1; 
+    height: 1px;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.commodity {
+    padding: 20px 25px;
+    text-align: center;
+}
+
+.commodity p {
+    margin-bottom: 15px;
+    color: #aaaaaa; 
+    font-size: 0.9rem;
+}
+
+/* --- ORDER TABLE --- Holdings & Positions */
+.title {
+    font-size: 1.8rem; 
+    font-weight: 400;
+    color: #444444; 
+    margin-bottom: 20px; 
+}
+.order-table table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 6px;
+    overflow: hidden; 
+}
+
+.order-table tr {
+    border-top: 1px solid #f1f1f1; 
+    border-bottom: 1px solid #f1f1f1; 
+    transition: background-color 0.2s ease;
+}
+
+.order-table tr:hover {
+    background-color: #fafafa; 
+}
+
+.order-table th {
+    text-align: right;
+    padding: 15px 10px;
+    color: #151515;
+    font-weight: 400;
+    font-size: 0.9rem;
+    background-color: #ffffff; 
+}
+
+.order-table tr th:first-child,
+.order-table tr td:first-child {
+    text-align: left;
+}
+
+.order-table tr th:nth-child(1),
+.order-table tr th:nth-child(4),
+.order-table tr td:nth-child(1),
+.order-table tr td:nth-child(4)  {
+    border-right: 1px solid #ffffff; 
+}
+
+.order-table tr td:first-child p {
+    /* Status Pill Styling */
+    background: #fff3e0; 
+    color: #ff8c00; 
+    width: 60%; 
+    padding: 4px 8px; 
+    text-align: center;
+    border-radius: 12px; 
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+.order-table tr td:last-child {
+    font-size: 0.8rem;
+}
+
+.order-table td {
+    padding: 10px 10px;
+    text-align: right;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #615f5f;
+}
+
+.order-table td.profit {
+    color: #00a651; 
+    font-weight: 500;
+}
+
+.order-table td.loss {
+    color: #d93d3d; 
+    font-weight: 500;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    align-items: flex-start; 
+    justify-content: space-between; 
+    margin-top: 30px; 
+}
+
+.col {
+    flex-basis: 48%;
+    text-align: left;
+}
+
+.col span {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; 
+}
+
+.col span p {
+    font-size: 1.8rem;
+    font-weight: 400; 
+    color: #444444;
+    display: inline-block;
+    margin: 0;
+}
+
+/* --- NO ORDERS SECTION --- Orders */
+.no-orders {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-top: 10%; 
+}
+
+.no-orders .icon {
+    transform: scale(3); 
+    color: #cccccc;
+    display: block;
+}
+
+.no-orders p {
+    margin-top: 20px;
+    color: #999999;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.order-buy {
+    color: #00a651;
+}
+
+.order-sell {
+    color: #d93d3d;
+}
+
+/* --- Summary --- */
+.username h6 {
+    font-size: 1.8rem; 
+    font-weight: 400;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+.divider {
+    border: none;
+    background: #f1f1f1; 
+    height: 1px;
+    margin: 15px 0;
+}
+
+.section {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f5f5f5; 
+    margin-bottom: 20px;
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+.section span {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.section span p {
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #555555;
+    margin: 0;
+}
+
+.section-icon {
+    color: #999999;
+}
+
+.data {
+    width: 60%; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.data .first h3 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #333333;
+    margin: 0;
+}
+
+.data .first p {
+    font-size: 0.9rem;
+    color: #999999;
+    margin: 0;
+}
+
+.data .first small {
+    font-size: 0.9rem;
+    color: #00a651; 
+    font-weight: 500;
+}
+
+.data .first .profit {
+    color: #00a651;
+}
+
+.data hr {
+    border: none;
+    border-left: 1px solid #f1f1f1;
+    height: 60px;
+}
+
+.data .second p {
+    font-size: 0.9rem;
+    color: #999999;
+    margin-bottom: 8px;
+    white-space: nowrap;
+}
+
+.data .second p span {
+    display: inline;
+    margin-left: 10px;
+    font-size: 1rem;
+    color: #555555;
+    font-weight: 500;
+}
+
+.section hr {
+    margin-top: 20px;
+}
+
+/* --- WATCHLIST --- */
+
+.watchlist-container {
+    flex-basis: 32%;
+    height: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.05); 
+    overflow-y: auto;
+    position: relative;
+    background-color: #ffffff; 
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.search {
+    width: 100%;
+    height: 6%;
+    border: none;
+    padding: 15px 20px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #333333; 
+    border-bottom: 0.8px solid #eeeeee; 
+}
+
+.search:focus {
+    outline: none;
+}
+
+.counts {
+    position: absolute;
+    right: 20px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #999999;
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 12%;
+}
+
+.list li {
+    border-bottom: 0.8px solid #f5f5f5; 
+    padding: 12px 15px; 
+    position: relative;
+    transition: background-color 0.2s ease;
+}
+
+.list li:hover {
+    cursor: move;
+    background-color: #f7f7f7;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 400;
+    font-size: 0.9rem; 
+    position: relative;
+}
+
+.item-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+}
+
+.item-info span:nth-child(1) {
+    color: #777777; 
+    font-weight: 500;
+    flex: 1;
+    margin-right: 8px;
+}
+
+.item-info span:nth-child(2) {
+    color: #333333; 
+    font-weight: 500;
+    flex: 2;
+    margin-right: 12px;
+}
+
+.item-info span:nth-child(3) {
+    font-weight: 500;
+    flex: 1;
+}
+
+.actions {
+    position: absolute;
+    right: 150px;
+    top: 50%;
+    transform: translateY(-50%);
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.list li:hover > .actions {
+    display: flex;
+}
+
+.actions span button {
+    width: 35px; 
+    height: 25px;
+    border-radius: 4px;
+    text-align: center;
+    margin-right: 4px; 
+    cursor: pointer;
+    border: none;
+    font-size: 0.75rem; 
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.buy {
+    background-color: #1e88e5;
+    color: #ffffff;
+}
+
+.sell {
+    background-color: #ff5722;
+    color: #ffffff;
+}
+
+.action {
+    background-color: #f5f5f5; 
+    border: 0.7px solid #e0e0e0;
+    color: #777;
+}
+
+.action:hover {
+    background-color: #e0e0e0;
+}
+
+.watchlist-number {
+    height: auto; 
+    width: 32%;
+    box-sizing: border-box;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    bottom: 0; 
+    left: 0;
+    border-top: 1px solid #eeeeee; 
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.03); 
+    z-index: 10;
+    background: #fff;
+}
+
+.watchlist-number ul {
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+}
+
+.watchlist-number ul li {
+    display: inline-block;
+    padding: 10px 15px;
+    border-right: 1px solid #f1f1f1;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #555555;
+    transition: color 0.2s ease;
+}
+
+.watchlist-number ul li:last-child {
+    border-right: none;
+}
+
+.watchlist-number ul li:nth-child(1) {
+    color: #ff8c00; 
+    font-weight: 600;
+}
+
+.watchlist-number ul li:hover {
+    color: #ff8c00;
+    cursor: pointer;
+}
+
+.settings {
+    transform: scale(0.9);
+    color: #999999;
+}
+
+.settings:hover {
+    cursor: pointer;
+}
+
+/* --- MOBILE RESPONSIVENESS FIXES --- */
+
+@media (max-width: 768px) {
+    /* 1. Fix Topbar Overflow */
+    .topbar-container {
+        height: auto; /* Allow topbar to expand if needed */
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .indices-container {
+        display: none; /* Hide ticker on small mobile to save vertical space */
+    }
+
+    .menu-container {
+        flex-basis: 100%;
+        width: 100%;
+        padding: 5px 15px;
+        flex-wrap: wrap; /* Allow items to wrap if they are too wide */
+        justify-content: space-between;
+    }
+
+    /* 2. Fix Menu List Overflow */
+    .menus {
+        width: 100%;
+        overflow-x: auto; /* Allows the menu to slide horizontally if too long */
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 5px;
+        justify-content: flex-start;
+    }
+
+    .menus ul {
+        display: flex;
+        white-space: nowrap; /* Prevents menu items from breaking into new lines */
+        padding-left: 0;
+    }
+
+    .menus li {
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+
+    /* 3. Stack the Main Layout */
+    .dashboard-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .content {
+        flex-basis: 100%;
+        width: 100%;
+        padding: 20px 15px;
+        overflow-y: visible;
+    }
+
+    .watchlist-container {
+        flex-basis: 100%;
+        width: 100%;
+        height: 400px; /* Give it a fixed height for easier scrolling */
+        border-top: 1px solid #eee;
+    }
+
+    /* 4. Fix Tables and Rows */
+    .row {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .col {
+        flex-basis: 100%;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .data {
+        width: 100%; /* Make stats take full width on mobile */
+    }
+
+    .order-table table {
+        display: block;
+        overflow-x: auto; /* Allow horizontal scroll for large tables */
+        width: 100%;
+    }
+
+    /* 5. Adjust Buttons and Profile */
+    .funds {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        margin: 5px 2px;
+        font-size: 0.8rem;
+        padding: 8px 12px;
+    }
+
+    .profile .username {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra tight spacing for very small phones */
+    .menu {
+        font-size: 0.75rem;
+    }
+    
+    .logo {
+        width: 25px;
+    }
+
+    .watchlist-number {
+        width: 100%;
+    }
+    
+    .watchlist-number ul li {
+        padding: 10px 8px;
+        font-size: 0.7rem;
+    }
+
+    .imp {
+        font-size: 1.5rem; /* Shrink large numbers slightly */
+    }
+}

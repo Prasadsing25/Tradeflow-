@@ -1,0 +1,90 @@
+/* --- SELL ACTION WINDOW --- */
+
+#sell-window.container {
+    --radius: 6px;
+    width: 420px !important;
+    height: auto !important;
+    background: #ffffff !important;
+    position: absolute !important;
+    bottom: 20px !important;
+    left: 35% !important;
+    /* display: flex !important; */
+    cursor: move;
+    /* flex-direction: column !important; */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+    /* border: 1px solid #eeeeee !important; */
+    box-sizing: border-box;
+    border-radius: var(--radius) !important;
+    z-index: 100 !important;
+    overflow: hidden !important;
+    /* Higher z-index */
+    animation: fadeIn 0.2s ease-out;
+}
+
+/* Add a header for Sell too if you want it to look consistent */
+#sell-window .regular-order {
+    padding: 20px 26px;
+    background-color: #fff;
+}
+
+#sell-window .header {
+    background: #eb240e !important;
+    margin: -20px -26px 20px -26px;
+    /* Offsets padding of regular-order */
+    padding: 15px 26px;
+    align-content: center;
+}
+
+#sell-window .header h3 {
+    margin: 0;
+    color: #fff !important;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+#sell-window .inputs fieldset:focus-within {
+    border-color: #ff5722 !important;
+}
+
+#sell-window .btn-orange {
+    background-color: #ff5722 !important;
+}
+
+/* Mobile Tweaks for the Window */
+@media (max-width: 768px) {
+
+    #sell-window.container {
+        width: 95% !important;
+        /* Force width to fit screen */
+        left: 2.5% !important;
+        /* Center it horizontally */
+        bottom: 10px !important;
+        /* Stick it to the bottom */
+        height: auto !important;
+        /* Let content determine height */
+        position: fixed !important;
+        /* Keep it visible even if scrolling */
+    }
+
+    .inputs {
+        flex-wrap: wrap;
+        /* Allows Qty and Price to stack if needed */
+        gap: 10px;
+    }
+
+    .inputs fieldset {
+        flex-basis: 100%;
+        /* Makes each input full width on very small screens */
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    #sell-window.container {
+        width: 100% !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        border-radius: 15px 15px 0 0 !important;
+        /* Rounded top corners only */
+    }
+}

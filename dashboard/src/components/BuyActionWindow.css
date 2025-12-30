@@ -1,0 +1,117 @@
+/* --- BUY ACTION WINDOW --- */
+
+#buy-window.container {
+    --radius: 6px;
+    width: 420px;
+    height: auto; 
+    background: #ffffff;
+    position: absolute;
+    bottom: 20px;
+    left: 35%;
+    cursor: move;
+    box-sizing: border-box;
+    z-index: 100;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid #eeeeee;
+    overflow: hidden;
+}
+
+/* Style for the new header div inside the Buy window */
+#buy-window .header {
+    background: #1e88e5;
+    margin: -20px -26px 20px -26px; /* Offsets padding of regular-order */
+    padding: 15px 26px;
+}
+
+#buy-window .header h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.regular-order {
+    padding: 20px 26px;
+    background-color: #fff;
+}
+
+.inputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.inputs fieldset {
+    flex: 1;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    padding: 0 10px 5px 10px;
+}
+
+.inputs fieldset legend {
+    font-size: 0.75rem;
+    color: #888;
+}
+
+.inputs fieldset input {
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+    outline: none;
+    background: transparent;
+}
+
+.inputs fieldset:focus-within {
+    border-color: #1e88e5;
+}
+
+.buttons {
+    width: 100%;
+    background-color: #f9f9f9;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #eeeeee;
+}
+
+.btn-blue {
+    background: #1e88e5;
+    color: #fff;
+    margin-right: 8px;
+}
+
+/* Mobile Tweaks for the Window */
+@media (max-width: 768px) {
+    /* Use the IDs to ensure the styles apply */
+    #buy-window.container {
+        width: 95% !important;   /* Force width to fit screen */
+        left: 2.5% !important;   /* Center it horizontally */
+        bottom: 10px !important; /* Stick it to the bottom */
+        height: auto !important; /* Let content determine height */
+        position: fixed !important; /* Keep it visible even if scrolling */
+    }
+    
+    .inputs {
+        flex-wrap: wrap; /* Allows Qty and Price to stack if needed */
+        gap: 10px;
+    }
+
+    .inputs fieldset {
+        flex-basis: 100%; /* Makes each input full width on very small screens */
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    #buy-window.container {
+        width: 100% !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        border-radius: 15px 15px 0 0 !important; /* Rounded top corners only */
+    }
+}
