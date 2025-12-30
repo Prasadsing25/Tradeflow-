@@ -51,6 +51,10 @@ app.post("/login", async (req, res) => {
     res.json({ success: true, user: { username: user.username, email: user.email } });
 });
 
+// Add this near your other routes in backend/index.js
+app.get("/", (req, res) => {
+  res.send("Backend is running successfully!");
+});
 
 //Fetch data 
 app.get("/addHoldings", async (req, res) => {
