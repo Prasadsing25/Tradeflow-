@@ -7,7 +7,7 @@ const Positions = () => {
     //Fetching Positions data from Database (Backend) to UI
     const [allPositions, setAllPositions] = useState([]);
     useEffect(() => {
-        axios.get("http://localhost:3000/addPositions").then((res) => {
+        axios.get("https://tradeflowvista.onrender.com/addPositions").then((res) => {
             setAllPositions(res.data);
         })
     })
