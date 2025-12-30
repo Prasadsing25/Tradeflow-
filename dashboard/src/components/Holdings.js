@@ -9,7 +9,7 @@ const Holdings = () => {
     //Fetching Holdings data from Database (Backend) to UI
     const [allHoldings, setAllHoldings] = useState([]);
     useEffect(() => {
-        axios.get("http://localhost:3000/addHoldings").then((res) => {
+        axios.get("https://tradeflowvista.onrender.com/addHoldings").then((res) => {
             // console.log(res.data);
             setAllHoldings(res.data);
         });
