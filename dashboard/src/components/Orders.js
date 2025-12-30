@@ -7,7 +7,7 @@ const Orders = () => {
 
     //fetch orders from dashboard
     useEffect(() => {
-        axios.get("http://localhost:3000/addOrders").then((res) => {
+        axios.get("https://tradeflowvista.onrender.com/addOrders").then((res) => {
             setAllOrders(res.data);
         }).catch((err) => {
             console.error("Axios Error:", err);
