@@ -43,7 +43,7 @@ function Footer() {
                     </div>
                     <div className='col' style={{lineHeight: "2"}}>
                         <p className='fw-semibold' style={{ fontSize: "18px" }}>Account</p>
-                        <a href='http://localhost:3001' style={{ textDecoration: 'none', color: "#666" }}>Open an Demat Account</a>
+                        <a href='https://tradeflow-dashboard.onrender.com' style={{ textDecoration: 'none', color: "#666" }}>Open an Demat Account</a>
                         <br />
                         <a href='#' style={{ textDecoration: 'none', color: "#666" }}>Fund Transfer</a>
                         <br />

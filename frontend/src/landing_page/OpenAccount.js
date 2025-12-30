@@ -2,7 +2,7 @@ import React from 'react';
 
 function OpenAccount() {
     const handleSignupRedirect = () => {
-        window.location.href = "http://localhost:3001";
+        window.location.href = "https://tradeflow-dashboard.onrender.com";
     };
 
     return (

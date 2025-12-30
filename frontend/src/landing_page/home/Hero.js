@@ -3,7 +3,7 @@ import React from 'react';
 function Hero() {
     const handleSignupRedirect = () => {
         // Redirects to the Dashboard app where your Auth logic lives
-        window.location.href = "http://localhost:3001";
+        window.location.href = "https://tradeflow-dashboard.onrender.com";
     };
 
     return (
