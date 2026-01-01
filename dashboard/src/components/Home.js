@@ -41,8 +41,8 @@ function Home() {
                     {/* LEFT PANEL */}
                     <div className="auth-left">
                         <h2>Come join us!</h2>
-                        <p>
-                            Create your Tradeflow account today to access exclusive trading tools, personalized insights, rewards, and seamless portfolio management.
+                        <p >
+                            Create your Tradeflow account today <br/> to access exclusive trading watchlist, personalized insights, and rewards.
                         </p>
                         <button
                             className="switch-btn"
