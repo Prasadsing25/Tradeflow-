@@ -42,8 +42,7 @@ function Home() {
                     <div className="auth-left">
                         <h2>Come join us!</h2>
                         <p>
-                            Create an account to access exclusive offers,
-                            rewards and discounts.
+                            Create your Tradeflow account today to access exclusive trading tools, personalized insights, rewards, and seamless portfolio management.
                         </p>
                         <button
                             className="switch-btn"
