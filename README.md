@@ -1,2 +1,2 @@
 # Tradeflow-
-It is a stock trading app.
+It is a stock trading web application.
