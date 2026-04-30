@@ -15,8 +15,8 @@ const app = express();
 
 app.use(cors({
     origin: [
-        "https://tradeflow-frontend.onrender.com",  // Your Frontend URL
-        "https://tradeflow-dashboard.onrender.com" // Your Dashboard URL
+        "https://tradeflow-frontend.onrender.com",  // Frontend URL
+        "https://tradeflow-dashboard.onrender.com" // Dashboard URL
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"]
