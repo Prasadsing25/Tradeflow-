@@ -29,17 +29,17 @@ function Team() {
                 <div className='col-4 text-center'>
                     <img src='media/images/prasadsolanki.jpg' alt='prasadsing' style={{ borderRadius: '100%', width: '60%' }} />
                     <h4 className='mt-5' style={{ fontSize: '18px', color: '#424242' }}>Pawan Patil</h4>
-                    <h6 className='text-muted' style={{ fontSize: '14.4px' }}>Support</h6>
+                    <h6 className='text-muted' style={{ fontSize: '14.4px' }}>Support Executive</h6>
                 </div>
                 <div className='col-4 text-center'>
                     <img src='media/images/prasadsolanki.jpg' alt='prasadsing' style={{ borderRadius: '100%', width: '60%' }} />
                     <h4 className='mt-5' style={{ fontSize: '18px', color: '#424242' }}>Gaurav Sonawane</h4>
-                    <h6 className='text-muted' style={{ fontSize: '14.4px' }}>Support</h6>
+                    <h6 className='text-muted' style={{ fontSize: '14.4px' }}>Support Executive</h6>
                 </div>
                 <div className='col-4 text-center'>
                     <img src='media/images/prasadsolanki.jpg' alt='prasadsing' style={{ borderRadius: '100%', width: '60%' }} />
                     <h4 className='mt-5' style={{ fontSize: '18px', color: '#424242' }}>Prasad Shinde</h4>
-                    <h6 className='text-muted' style={{ fontSize: '14.4px' }}>Support</h6>
+                    <h6 className='text-muted' style={{ fontSize: '14.4px' }}>Support Executive</h6>
                 </div>
             </div>
         </div>
