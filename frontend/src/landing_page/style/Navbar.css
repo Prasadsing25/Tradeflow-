@@ -1,0 +1,53 @@
+/* Mobile Responsive Overrides */
+
+@media (max-width: 991.98px) {
+    /* Fixes the logo being too small (overriding the 17% inline style) */
+    .navbar-brand img {
+        width: 120px !important; 
+        min-width: 100px;
+    }
+
+    /* Adds spacing to the collapsible menu for better readability */
+    .navbar-collapse {
+        padding: 1rem 0;
+    }
+
+    /* Spacing between vertical menu items */
+    .nav-item {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #f1f1f1; /* Optional: adds a clean separator */
+    }
+
+    /* Removes the border from the last item */
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    /* Ensures the 'Signup' link (first item) stands out on mobile */
+    .nav-link.active {
+        color: #0d6efd !important;
+        font-weight: bold;
+    }
+
+    /* Adjusts the 'form' container to allow full width links */
+    .d-flex {
+        display: block !important;
+    }
+
+    .navbar-nav {
+        width: 100%;
+    }
+}
+
+/* Tablet/Desktop Tweaks */
+@media (min-width: 992px) {
+    /* Ensures the links are pushed to the right on desktop */
+    .navbar-nav {
+        margin-left: auto;
+    }
+    
+    /* Keeps logo consistent on larger screens if the 17% feels off */
+    .navbar-brand img {
+        width: 150px !important;
+    }
+}

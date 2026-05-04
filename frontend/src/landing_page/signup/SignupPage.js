@@ -1,9 +1,11 @@
 import React from 'react';
+import '../OpenAccount'
+import OpenAccount from '../OpenAccount';
 
 function SignupPage() {
     
     return ( 
-        <h1>SignUp</h1>
+        <OpenAccount/>
      );
 }
 

@@ -1,0 +1,74 @@
+/* --- Footer Mobile Responsiveness --- */
+
+@media (max-width: 991.98px) {
+    /* 1. Stack the Main Footer Columns */
+    footer .row {
+        display: flex;
+        flex-direction: column !important;
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    footer .col {
+        width: 100% !important;
+        flex: none !important;
+        margin-bottom: 30px; /* Space between Company, Support, and Account sections */
+    }
+
+    /* 2. Logo Adjustment */
+    footer img {
+        width: 180px !important; /* Fixed width for the logo on mobile */
+        margin-bottom: 10px;
+    }
+
+    /* 3. Link Spacing */
+    footer a {
+        display: inline-block;
+        padding: 5px 0; /* Larger tap target for links */
+        font-size: 15px !important;
+    }
+
+    footer .fw-semibold {
+        margin-bottom: 15px !important;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 5px;
+        width: fit-content;
+    }
+
+    /* 4. Fine Print / Disclaimer Text */
+    .text-muted {
+        font-size: 11px !important;
+        line-height: 1.6;
+        padding: 0 10px;
+        text-align: justify;
+    }
+
+    .mt-5.text-muted p {
+        margin-bottom: 15px;
+    }
+
+    /* 5. Bottom Legal Links (NSE, BSE, etc.) */
+    .mb-3.text-center {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding-bottom: 20px;
+    }
+
+    .mb-3.text-center a {
+        margin: 0 !important;
+        font-size: 13px !important;
+        background: #eee; /* Makes them look like small chips/buttons */
+        padding: 4px 10px;
+        border-radius: 4px;
+    }
+}
+
+/* Fix for very small screens */
+@media (max-width: 576px) {
+    .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}

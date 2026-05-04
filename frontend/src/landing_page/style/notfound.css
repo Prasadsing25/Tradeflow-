@@ -1,0 +1,50 @@
+/* --- 404 Page Mobile Responsiveness --- */
+
+@media (max-width: 991.98px) {
+    /* 1. Reset Container Spacing */
+    .container.p-5 {
+        padding: 3rem 1.5rem !important;
+        text-align: center;
+    }
+
+    /* 2. Scale Down the Large Header */
+    h3 {
+        font-size: 40px !important; /* Reduces 60px to 40px for mobile */
+        margin-bottom: 20px;
+    }
+
+    /* 3. Center the Row content */
+    .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* 4. Fix the Button Width */
+    .btn-outline-danger {
+        width: 80% !important; /* Overrides the 20% inline width */
+        max-width: 300px;
+        padding: 12px !important;
+        font-size: 1.1rem !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* 5. Adjust Paragraph Text */
+    p {
+        font-size: 16px;
+        color: #666;
+        padding: 0 10px;
+    }
+}
+
+/* Extra small screen adjustment */
+@media (max-width: 480px) {
+    h3 {
+        font-size: 32px !important;
+    }
+}

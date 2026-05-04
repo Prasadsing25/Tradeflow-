@@ -9,6 +9,8 @@ import OpenAccount from '../OpenAccount';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 
+import '../style/home.css';
+
 function HomePage() {
     return ( 
         <>

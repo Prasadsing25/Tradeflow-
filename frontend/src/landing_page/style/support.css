@@ -1,0 +1,131 @@
+/* --- Support Hero Mobile Responsiveness --- */
+
+.btn {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    color: white !important; /* White text looks better on the blue hero bg */
+    padding: 10px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #387ed1 !important; /* Button turns white, text turns blue */
+    border-color: white;
+}
+
+
+@media (max-width: 991.98px) {
+    /* 1. Adjust the Main Background Container */
+    #supportHero {
+        padding: 0 !important; /* Remove fluid padding to use full width */
+        background-color: #387ed1; /* Matches common support portal colors */
+    }
+
+    /* 2. Top Header (Support Portal & Track Tickets) */
+    #supportWrapper {
+        padding: 2.5rem 1.5rem !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    #supportWrapper h4 {
+        font-size: 1.4rem;
+        margin: 0;
+    }
+
+    #supportWrapper button {
+        width: 100%; /* Full width button for easier tapping */
+        max-width: 300px;
+    }
+
+    /* 3. Search and Featured Content Stacking */
+    #supportInput {
+        padding: 2rem 1.5rem !important;
+        margin: 0 !important;
+        display: flex;
+        flex-direction: column !important; /* Stacks the search box and featured links */
+    }
+
+    #supportInput .col-6 {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* 4. Search Input Styling */
+    #supportInput h3 {
+        font-size: 1.25rem !important;
+        line-height: 1.4;
+        text-align: left;
+        margin-bottom: 1.5rem;
+    }
+
+    #supportInput h3 br {
+        display: none; /* Prevents awkward text breaks */
+    }
+
+    #supportInput input {
+        width: 100% !important;
+        height: 50px;
+        padding: 10px 15px;
+        border-radius: 4px;
+        border: none;
+        margin-bottom: 1rem;
+        font-size: 15px;
+    }
+
+    /* 5. Quick Links (Below Input) */
+    #supportInput a {
+        display: inline-block;
+        margin-right: 15px;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+        color: #fff !important; /* Ensures contrast if bg is dark */
+        text-underline-offset: 4px;
+    }
+
+    /* 6. Featured Section Adjustments */
+    #supportFeature {
+        margin-top: 3rem !important;
+        padding-top: 2rem !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    #supportFeature h3 {
+        text-align: left;
+        font-size: 1.3rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    #supportFeature ol {
+        padding-left: 1.2rem;
+        text-align: left;
+    }
+
+    #supportFeature ol li {
+        margin-bottom: 15px;
+    }
+
+    #supportFeature ol li a {
+        font-size: 1rem;
+        line-height: 1.5;
+        display: block;
+    }
+
+    .btn-track-tickets {
+        width: 100%; /* Full width for easier thumb-tapping */
+        max-width: 350px;
+        text-align: center;
+        padding: 14px; /* Larger hit area for mobile */
+        font-size: 18px;
+        margin-top: 10px;
+    }
+}

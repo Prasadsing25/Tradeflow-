@@ -1,0 +1,80 @@
+/* --- Product Page Mobile Responsiveness --- */
+
+@media (max-width: 991.98px) {
+    
+    /* 1. Universal Section Stacking */
+    .row.align-items-center {
+        display: flex;
+        flex-direction: column !important; /* Forces vertical stacking */
+        text-align: center !important;
+    }
+
+    /* 2. Left & Right Section Fixes */
+    /* Ensure text is centered and takes full width */
+    .col-7, .col-4 {
+        width: 100% !important;
+        padding: 1.5rem !important;
+        text-align: center !important;
+    }
+
+    /* Fix the "RightSection" specifically so Image stays on top of Text on mobile */
+    /* This uses flex-direction: column-reverse if the image was second in HTML */
+    .row.align-items-center {
+        display: flex;
+        flex-direction: column-reverse !important; 
+    }
+    
+    /* However, for LeftSection, we want Image (col-7) on top of Text (col-4) */
+    /* So we target the order specifically */
+    .col-7 { order: 1; }
+    .col-4 { order: 2; }
+
+    /* 3. Link and Button Adjustments */
+    .d-flex.gap-5 {
+        justify-content: center;
+        gap: 1.5rem !important;
+        flex-wrap: wrap; /* Prevents links from overlapping */
+    }
+
+    /* App Store / Google Play badges */
+    .mt-5 img {
+        width: 130px;
+        margin: 10px;
+    }
+
+    /* 4. Universe Component Grid */
+    /* Change 3-column grid to 1-column stack */
+    .Universe_container .col-4 {
+        width: 100% !important;
+        margin-top: 2rem !important;
+    }
+
+    /* Adjust the "Universe" logos */
+    .Universe_container img {
+        width: 40% !important;
+        max-width: 180px;
+    }
+
+    /* 5. The "Sign up for Free" Button */
+    button.btn-primary {
+        width: 80% !important; /* Overrides the 16% inline style */
+        margin-top: 3rem !important;
+        border-radius: 4px !important;
+    }
+
+    /* Footer blog text */
+    .mt-5.mb-5.text-center {
+        font-size: 16px !important;
+        padding: 0 20px;
+    }
+}
+
+/* Extra small screens fix for the Hero */
+@media (max-width: 576px) {
+    h1 {
+        font-size: 24px !important;
+    }
+    h4 {
+        font-size: 18px !important;
+    }
+}

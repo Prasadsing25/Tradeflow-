@@ -1,5 +1,6 @@
 import React from 'react';
 
+import '../landing_page/style/footer.css';
 function Footer() {
     return (
         <footer style={{ backgroundColor: "#F8F9FA" }}>
