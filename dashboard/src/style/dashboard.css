@@ -1,0 +1,86 @@
+/* Dashboard.css / Topbar.css */
+.topbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+    background: white;
+}
+
+.indices-container {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menus ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Mobile Responsiveness for Topbar & Menu */
+@media (max-width: 991px) {
+    .topbar-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    /* Stack Indices on top of Menu */
+    .indices-container {
+        width: 100%;
+        justify-content: space-around;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #f1f1f1;
+        margin-bottom: 10px;
+    }
+
+    .index-points { font-weight: bold; }
+
+    /* Make the Menu links scrollable horizontally if they don't fit */
+    .menus ul {
+        overflow-x: auto;
+        white-space: nowrap;
+        width: 100vw;
+        padding: 10px 20px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .menu p {
+        font-size: 14px;
+        margin: 0;
+    }
+
+    /* Hide the logo on very small screens to save space in the menu bar */
+    .menu-container img {
+        display: none;
+    }
+
+    /* Adjust Profile Dropdown for mobile */
+    .dropdown {
+        position: fixed !important; /* Lock to screen instead of relative parent */
+        top: auto !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        border-radius: 20px 20px 0 0 !important;
+        margin: 0 !important;
+        padding: 25px !important;
+        text-align: center;
+    }
+
+    .dropdown button {
+        width: 100% !important;
+        margin-left: 0 !important;
+        height: 50px;
+    }
+}

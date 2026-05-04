@@ -5,11 +5,13 @@
     align-items: center;
     background: #eaeaea;
     font-family: sans-serif;
+    padding: 20px; /* Added padding to prevent card touching screen edges */
 }
 
 .auth-card {
-    width: 900px;
-    height: 500px;
+    width: 100%;
+    max-width: 900px; /* Changed from fixed width to max-width */
+    min-height: 500px; /* Changed from fixed height to min-height */
     display: flex;
     background: #fff;
     border-radius: 10px;
@@ -44,11 +46,16 @@
 .switch-btn {
     padding: 12px 25px;
     border-radius: 25px;
-    border: none;
+    border: 2px solid rgba(255, 255, 255, 0.4); /* Made border slightly more visible */
     background: rgba(255, 255, 255, 0.2);
     color: white;
     cursor: pointer;
     font-size: 14px;
+    transition: background 0.3s;
+}
+
+.switch-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
 }
 
 /* RIGHT PANEL */
@@ -60,9 +67,16 @@
     justify-content: center;
 }
 
+.brand-logo {
+    width: 180px; /* Scaled down slightly */
+    margin: 0 auto 20px auto; /* Centered for mobile */
+    display: block;
+}
+
 .auth-right h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
+    font-size: 28px;
+    margin-bottom: 25px;
+    text-align: center;
 }
 
 .auth-right form {
@@ -77,6 +91,11 @@
     border-radius: 6px;
     border: 1px solid #ddd;
     outline: none;
+    transition: border-color 0.3s;
+}
+
+.auth-right input:focus {
+    border-color: #2563eb;
 }
 
 .submit-btn {
@@ -88,9 +107,39 @@
     border-radius: 6px;
     font-size: 15px;
     cursor: pointer;
+    font-weight: 600;
 }
 
-.brand-logo {
-    width: 200px;
-    margin-bottom: 20px;
+/* --- MOBILE RESPONSIVENESS --- */
+
+@media (max-width: 768px) {
+    .auth-card {
+        flex-direction: column; /* Stack panels vertically */
+        height: auto; /* Allow card to grow with content */
+    }
+
+    .auth-left {
+        width: 100%;
+        padding: 40px 20px;
+        order: 2; /* Moves "Join us" section below the form on mobile */
+    }
+
+    .auth-right {
+        width: 100%;
+        padding: 40px 20px;
+        order: 1; /* Moves form to the top for better UX */
+    }
+
+    .auth-left h2, .auth-right h2 {
+        font-size: 24px;
+    }
+
+    .auth-left p {
+        margin-bottom: 20px;
+        br { display: none; } /* Remove manual breaks on small screens */
+    }
+
+    .switch-btn {
+        width: 100%; /* Full width button for easier tapping */
+    }
 }
