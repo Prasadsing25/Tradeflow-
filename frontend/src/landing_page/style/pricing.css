@@ -1,0 +1,79 @@
+/* --- Pricing Page Mobile Responsiveness --- */
+
+@media (max-width: 991.98px) {
+    
+    /* 1. Hero Section: Convert 3-column grid to vertical stack */
+    .Hero_container .col-4 {
+        width: 100% !important;
+        padding: 2rem 1rem !important;
+        margin-top: 0 !important;
+        border-bottom: 1px solid #eee; /* Adds separation between pricing cards */
+    }
+
+    .Hero_container .col-4:last-child {
+        border-bottom: none;
+    }
+
+    /* Adjust image size for pricing icons */
+    .Hero_container img {
+        width: 50% !important;
+        max-width: 150px;
+        margin-bottom: 1rem;
+    }
+
+    /* Remove forced line breaks in pricing descriptions */
+    .Hero_container p br {
+        display: none;
+    }
+
+    /* Scale down headings slightly for mobile */
+    .Hero_container h1 {
+        font-size: 24px !important;
+    }
+
+    /* 2. Brokerage Section: Fix col-8 and col-4 layout */
+    .Brokerage_row {
+        display: flex;
+        flex-direction: column !important;
+    }
+
+    .Brokerage_row .col-8, 
+    .Brokerage_row .col-4 {
+        width: 100% !important;
+        padding: 2rem 1.5rem !important;
+        text-align: left;
+    }
+
+    /* Center the titles on mobile for better balance */
+    .Brokerage_row h3 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Ensure list items are readable and spaced well for touch */
+    .Brokerage_row ul {
+        padding-left: 1.2rem;
+        line-height: 1.8 !important; /* Slightly tighter for mobile lists */
+        font-size: 14px !important;
+    }
+
+    .Brokerage_row ul li {
+        margin-bottom: 15px;
+    }
+
+    /* The "List of Charges" link container */
+    .Brokerage_row .col-4 {
+        border-top: 1px solid #eee;
+        padding-top: 2rem !important;
+    }
+}
+
+/* Specific fix for the main page header */
+@media (max-width: 576px) {
+    .Hero_container > .row > h1 {
+        font-size: 28px !important;
+    }
+    .Hero_container > .row > p {
+        font-size: 18px !important;
+    }
+}

@@ -2,6 +2,8 @@ import React from 'react';
 import Hero from './Hero';
 import Team from './Team';
 
+import '../style/about.css';
+
 function AboutPage() {
     return ( 
         <>

@@ -1,0 +1,70 @@
+/* --- About Page Mobile Responsiveness --- */
+
+@media (max-width: 991.98px) {
+    /* 1. Hero Section Adjustments */
+    .fs-2.text-center {
+        font-size: 1.5rem !important; /* Makes the main heading smaller on mobile */
+        padding: 0 10px;
+        line-height: 1.4;
+    }
+
+    /* Reduce the heavy padding (p-5) used in Hero and Team */
+    .p-5 {
+        padding: 1.5rem !important;
+    }
+
+    /* 2. Text Content Stacking */
+    .row.text-muted {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.95rem !important; /* Slightly smaller text for readability */
+        line-height: 1.6 !important;
+    }
+
+    /* Reset column widths from side-by-side to full width */
+    .col-6, .col-4 {
+        width: 100% !important;
+        padding: 1rem !important;
+    }
+
+    /* 3. Team Section Tweaks */
+    
+    /* Main founder image adjustment */
+    .col-6.text-center img {
+        width: 70% !important; /* Make founder profile pic larger on mobile */
+        margin-bottom: -20px;
+    }
+
+    /* Align founder text to center when stacked */
+    .col-6.p-3 {
+        text-align: center;
+    }
+
+    /* Social link spacing */
+    .col-6.p-3 p a {
+        display: inline-block;
+        margin: 5px 0;
+    }
+
+    /* Support Team Grid: Change 3-column to 1-column or 2-column */
+    .row.mt-5.p-3 {
+        display: flex;
+        flex-direction: column; /* Stacks support executives vertically */
+        align-items: center;
+    }
+
+    .col-4.text-center {
+        margin-bottom: 40px; /* Space between team members */
+    }
+
+    .col-4.text-center img {
+        width: 50% !important; /* Keep support executive photos a moderate size */
+    }
+}
+
+/* Specific fix for very small phones */
+@media (max-width: 480px) {
+    .fs-2.text-center br {
+        display: none; /* Removes line breaks in the heading on small screens */
+    }
+}

@@ -1,0 +1,78 @@
+/* --- Global Home Responsiveness --- */
+
+/* Targets mobile and tablets */
+@media (max-width: 991.98px) {
+    
+    /* 1. Reset Containers and Rows */
+    .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column; /* Stacks all col-6/col-4 side-by-side divs */
+        text-align: center;
+    }
+
+    /* 2. Fix Column Widths */
+    .col-6, .col-4, .col-2 {
+        width: 100% !important;
+        padding: 10px 0 !important;
+    }
+
+    /* 3. Hero & OpenAccount Buttons */
+    /* Overrides the inline width: 20% to make buttons usable on phones */
+    .btn-primary {
+        width: 80% !important; 
+        margin-top: 20px !important;
+    }
+
+    /* 4. Image Handling */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+        width: auto !important; /* Overrides inline percentages like 17% or 90% */
+        margin-bottom: 20px;
+    }
+
+    /* 5. Specific Component Fixes */
+
+    /* Awards Section: Center lists on mobile */
+    .col-6 ul {
+        display: inline-block;
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    /* Stats Section: Links spacing */
+    .mx-5 {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    /* Pricing Section: Grid fix */
+    .pricing-row .col {
+        margin-bottom: 15px;
+        border: 1px solid #dee2e6 !important;
+    }
+
+    /* Text Adjustments */
+    h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    p {
+        font-size: 1rem !important;
+        padding: 0 10px;
+    }
+}
+
+/* --- Tablet specific (Optional) --- */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .btn-primary {
+        width: 40% !important;
+    }
+}
