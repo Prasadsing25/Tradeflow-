@@ -77,7 +77,7 @@ app.get("/addOrders", async (req, res) => {
     } catch (err) {
         res.status(500).json({ message: "Error fetching orders", error: err });
     }
-})
+});
 
 app.post("/newOrder", async (req, res) => {
     let newOrder = new OrdersModel({
