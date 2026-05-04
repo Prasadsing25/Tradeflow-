@@ -1,0 +1,72 @@
+/* Auth.css */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f7f6;
+    padding: 20px;
+}
+
+.auth-card {
+    display: flex;
+    width: 900px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.auth-left {
+    flex: 1;
+    background: #387ed1;
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth-right {
+    flex: 1;
+    padding: 40px;
+}
+
+.brand-logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+/* Mobile Responsiveness for Auth */
+@media (max-width: 768px) {
+    .auth-card {
+        flex-direction: column; /* Stack panels vertically */
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .auth-left {
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .auth-left h2 { font-size: 1.5rem; }
+    .auth-left p { font-size: 0.9rem; }
+
+    .auth-right {
+        padding: 30px 20px;
+    }
+
+    .auth-right h2 { text-align: center; }
+
+    input {
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 12px;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 12px;
+    }
+}
