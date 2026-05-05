@@ -7,8 +7,6 @@ import Dashboard from './Dashboard';
 import Topbar from './Topbar';
 // import { Password } from "@mui/icons-material";
 
-import Auth from '../components/Auth';
-
 function Home() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isSignup, setIsSignup] = useState(true);  //TRUE so new visitors see Signup by default

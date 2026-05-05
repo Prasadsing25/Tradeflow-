@@ -7,13 +7,16 @@ const Orders = () => {
 
     //fetch orders from dashboard
     useEffect(() => {
-        axios.get("https://tradeflowvista.onrender.com/addOrders").then((res) => {
-            setAllOrders(res.data);
-        }).catch((err) => {
-            console.error("Axios Error:", err);
-            // Optionally set an error state here to show a message to the user
-        });
+        const user = JSON.parse(localStorage.getItem("user"));
+        if (user && user.id) {
+            axios.get(`https://tradeflowvista.onrender.com/addOrders?userId=${user.id}`)
+            .then ((res) => {
+                setAllOrders(res.data);
+            })
+            .catch((err) => console.error("Axios Errror: ", err))
+        }
     }, []);
+
     return (
         <div className="orders">
             {allOrders.length === 0 ? (

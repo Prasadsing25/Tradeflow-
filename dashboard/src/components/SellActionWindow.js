@@ -19,11 +19,14 @@ const SellActionWindows = ({ uid }) => {
     }, [uid]);
 
     const handleSellClick = () => {
+        const user = JSON.parse(localStorage.getItem("user"));
+
         axios.post('https://tradeflowvista.onrender.com/newOrder', {
             name: uid,
             qty: stockQuantity,
             price: stockPrice,
-            mode: "SELL"
+            mode: "SELL",
+            userId : user.id
         });
         closeSellWindow();
     }
