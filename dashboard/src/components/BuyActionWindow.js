@@ -28,8 +28,8 @@ const BuyActionWindows = ({ uid }) => {
         try {
             axios.post('https://tradeflowvista.onrender.com/newOrder', {
                 name: uid,
-                qty: Number(stockQuantity),
-                price: Number(stockPrice),
+                qty: stockQuantity,
+                price: stockPrice,
                 mode: "BUY",
                 userId: user.id
             });

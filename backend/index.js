@@ -91,17 +91,17 @@ app.get("/addOrders", async (req, res) => {
 app.post("/newOrder", async (req, res) => {
     try {
         const { name, qty, price, mode, userId } = req.body;
-
-        let newOrder = new OrdersModel ({
-            name: req.body.name,
-            qty: req.body.qty,
-            price: req.body.price,
-            mode: req.body.mode,
-            user: req.body.userId
+        
+        let newOrder = new OrdersModel({
+            name,
+            qty,
+            price,
+            mode,
+            user: userId // Map the userId from frontend
         });
 
         await newOrder.save();
-        res.status(201).send("Order Placed")
+        res.status(201).send("Order Placed");
     } catch (err) {
         res.status(500).send("Error placing order")
     }
