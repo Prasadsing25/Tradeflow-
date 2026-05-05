@@ -24,16 +24,25 @@ const BuyActionWindows = ({ uid }) => {
 
     const handleBuyClick = () => {
         const user = JSON.parse(localStorage.getItem("user"));
-        
-        axios.post('https://tradeflowvista.onrender.com/newOrder', {
-            name: uid,
-            qty: stockQuantity,
-            price: stockPrice,
-            mode: "BUY",
-            userId: user.id
-        });
 
-        generalContext.closeBuyWindow();
+        if (!user || !user.id) {
+            alert("Please login first");
+            return;
+        }
+
+        try {
+            axios.post('https://tradeflowvista.onrender.com/newOrder', {
+                name: uid,
+                qty: Number(stockQuantity),
+                price: Number(stockPrice),
+                mode: "BUY",
+                userId: user.id
+            });
+
+            generalContext.closeBuyWindow();
+        } catch (err) {
+            console.error("Order failed", err);
+        }
     }
 
     const handleCancelClick = () => {

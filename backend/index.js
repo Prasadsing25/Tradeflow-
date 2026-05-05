@@ -93,11 +93,11 @@ app.post("/newOrder", async (req, res) => {
         const { name, qty, price, mode, userId } = req.body;
 
         let newOrder = new OrdersModel ({
-            name,
-            qty,
-            price,
-            mode,
-            user: userId
+            name: req.body.name,
+            qty: req.body.qty,
+            price: req.body.price,
+            mode: req.body.mode,
+            user: req.body.userId
         });
 
         await newOrder.save();

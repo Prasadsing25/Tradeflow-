@@ -7,15 +7,20 @@ const Orders = () => {
 
     //fetch orders from dashboard
     useEffect(() => {
-        const user = JSON.parse(localStorage.getItem("user"));
-        if (user && user.id) {
-            axios.get(`https://tradeflowvista.onrender.com/addOrders?userId=${user.id}`)
-            .then ((res) => {
-                setAllOrders(res.data);
-            })
-            .catch((err) => console.error("Axios Errror: ", err))
-        }
-    }, []);
+        const fetchOrders = async () => {
+            const user = JSON.parse(localStorage.getItem("user"));
+            if (user && user.id) {
+                try {
+                    // Ensure the URL matches your backend port (usually 3000 or 3001)
+                    const res = await axios.get(`https://tradeflowvista.onrender.com/addOrders?userId=${user.id}`);
+                    setAllOrders(res.data);
+                } catch (err) {
+                    console.error("Fetch error:", err);
+                }
+            }
+        };
+        fetchOrders();
+    }, []); // This runs every time you click the "Orders" tab
 
     return (
         <div className="orders">
