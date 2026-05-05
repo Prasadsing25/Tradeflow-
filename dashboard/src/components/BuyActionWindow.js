@@ -25,11 +25,6 @@ const BuyActionWindows = ({ uid }) => {
     const handleBuyClick = () => {
         const user = JSON.parse(localStorage.getItem("user"));
 
-        if (!user || !user.id) {
-            alert("Please login first");
-            return;
-        }
-
         try {
             axios.post('https://tradeflowvista.onrender.com/newOrder', {
                 name: uid,
