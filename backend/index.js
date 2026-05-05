@@ -32,13 +32,21 @@ const { UserModel } = require("./model/UserModel");
 app.post("/signup", async (req, res) => {
     try {
         const { email, password, username } = req.body;
-        const existingUser = await UserModel.findOne({email});
-        if (existingUser) return res.json({message: "User already exists", success: false });
+        const existingUser = await UserModel.findOne({ email });
+        if (existingUser) return res.json({ message: "User already exists", success: false });
 
-        const user = await UserModel.create({email, password, username });
-        res.json({message: "Signed UP!", success: true, user: { username: user.username, email: user.email } })
+        const user = await UserModel.create({ email, password, username });
+        res.json({
+            message: "Signed UP!",
+            success: true,
+            user: {
+                id: user._id,
+                username: user.username,
+                email: user.email
+            }
+        })
     } catch (error) {
-        res.status(500).json({message: "Error creating user", success: false});
+        res.status(500).json({ message: "Error creating user", success: false });
     }
 });
 
@@ -51,18 +59,19 @@ app.post("/login", async (req, res) => {
     const isMatch = await require('bcryptjs').compare(password, user.password);
     if (!isMatch) return res.json({ message: "Invalid password", success: false });
 
-    res.json({ success: true, 
-        user: { 
-            id: user._id, 
-            username: user.username, 
-            email: user.email 
-        } 
+    res.json({
+        success: true,
+        user: {
+            id: user._id,
+            username: user.username,
+            email: user.email
+        }
     });
 });
 
 // Add this near your other routes in backend/index.js
 app.get("/", (req, res) => {
-  res.send("Backend is running successfully!");
+    res.send("Backend is running successfully!");
 });
 
 //Fetch data 
@@ -78,20 +87,20 @@ app.get("/addPositions", async (req, res) => {
 
 app.get("/addOrders", async (req, res) => {
     try {
-        const {userId} = req.query;
-        if (!userId) return res.status(400).json({ message: "User Id required"});
+        const { userId } = req.query;
+        if (!userId) return res.status(400).json({ message: "User Id required" });
 
-        let userOrders = await OrdersModel.find({ user: userId});
+        let userOrders = await OrdersModel.find({ user: userId });
         res.json(userOrders);
     } catch (err) {
-        res.status(500).json({ message: "Error fetching orders", error: err});
+        res.status(500).json({ message: "Error fetching orders", error: err });
     }
 });
 
 app.post("/newOrder", async (req, res) => {
     try {
         const { name, qty, price, mode, userId } = req.body;
-        
+
         let newOrder = new OrdersModel({
             name,
             qty,

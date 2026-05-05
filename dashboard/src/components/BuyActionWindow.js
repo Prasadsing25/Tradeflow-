@@ -22,11 +22,11 @@ const BuyActionWindows = ({ uid }) => {
         }
     }, [uid]);
 
-    const handleBuyClick = () => {
+    const handleBuyClick = async () => {
         const user = JSON.parse(localStorage.getItem("user"));
 
         try {
-            axios.post('https://tradeflowvista.onrender.com/newOrder', {
+            await axios.post('https://tradeflowvista.onrender.com/newOrder', {
                 name: uid,
                 qty: stockQuantity,
                 price: stockPrice,
