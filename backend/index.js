@@ -36,16 +36,17 @@ app.post("/signup", async (req, res) => {
         if (existingUser) return res.json({ message: "User already exists", success: false });
 
         const user = await UserModel.create({ email, password, username });
-        res.json({
-            message: "Signed UP!",
-            success: true,
-            user: {
-                id: user._id,
-                username: user.username,
-                email: user.email
-            }
-        })
+        res.status(201).json({
+            message: "Signed UP!", 
+            success: true, 
+            user: { 
+                id: user._id, 
+                username: user.username, 
+                email: user.email 
+            } 
+        });
     } catch (error) {
+        console.error("Signup Error:", error);
         res.status(500).json({ message: "Error creating user", success: false });
     }
 });
@@ -110,9 +111,10 @@ app.post("/newOrder", async (req, res) => {
         });
 
         await newOrder.save();
-        res.status(201).send("Order Placed");
+        res.status(201).json({ message: "Order Placed" });
     } catch (err) {
-        res.status(500).send("Error placing order")
+        console.error("Error placing order:", err);
+        res.status(500).json({ message: "Error placing order" });
     }
 });
 
