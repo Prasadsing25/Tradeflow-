@@ -6,8 +6,10 @@ import Pricing from './Pricing';
 import Education from './Education';
 
 import OpenAccount from '../OpenAccount';
-import Navbar from '../Navbar';
-import Footer from '../Footer';
+// import Navbar from '../Navbar';
+// import Footer from '../Footer';
+
+import ChatBot from './chatbot';
 
 import '../style/home.css';
 
@@ -20,6 +22,7 @@ function HomePage() {
         <Pricing />
         <Education />
         <OpenAccount />
+        <ChatBot />
         </>
      );
 }
