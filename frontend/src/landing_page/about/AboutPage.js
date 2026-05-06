@@ -3,12 +3,14 @@ import Hero from './Hero';
 import Team from './Team';
 
 import '../style/about.css';
+import ChatBot from '../chatbot';
 
 function AboutPage() {
     return ( 
         <>
         <Hero/>
         <Team/>
+        <ChatBot/>
         </>
      );
 }

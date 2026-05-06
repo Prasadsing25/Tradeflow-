@@ -9,7 +9,7 @@ import OpenAccount from '../OpenAccount';
 // import Navbar from '../Navbar';
 // import Footer from '../Footer';
 
-import ChatBot from './chatbot';
+import ChatBot from '../chatbot';
 
 import '../style/home.css';
 

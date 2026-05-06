@@ -5,6 +5,7 @@ import RightSection from './RightSection';
 import Universe from './Universe';
 
 import '../style/product.css';
+import ChatBot from '../chatbot';
 
 function ProductPage() {
     return (
@@ -39,9 +40,10 @@ function ProductPage() {
                 productDescription="An easy to grasp, collection of stock market lessons with in-depth coverage and illustrations. Content is broken down into bite-size cards to help you learn on the go."
             />
             <p className='mt-5 mb-5 text-center' style={{fontSize: '20px', fontWeight: '400'}}>
-                 Want to know more about our technology stack? Check out the <a href='www.tradeflow.co'>TradeFlow.co</a> blog.
+                 Want to know more about our technology stack? Check out the <a href='https://economictimes.indiatimes.com/markets/stocks'>TradeFlow.co</a> blog.
             </p>
             <Universe />
+            <ChatBot />
         </>
     );
 }
