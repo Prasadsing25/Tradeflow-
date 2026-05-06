@@ -1,11 +1,11 @@
 /* --- Support Hero Mobile Responsiveness --- */
 
 .btn {
-    background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    color: white !important; /* White text looks better on the blue hero bg */
-    padding: 10px 24px;
-    font-size: 16px;
+    background-color: #0000FF;
+    border: 8px solid #5656b3;
+    color: #FFFFFF ; /* White text looks better on the blue hero bg */
+    padding: 18px 24px;
+    font-size: 18px;
     font-weight: 500;
     text-decoration: none;
     border-radius: 4px;
