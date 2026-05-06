@@ -68,11 +68,33 @@
         font-size: 1rem !important;
         padding: 0 10px;
     }
+
+    .signup-btn-lg {
+        /* 1. Reset width and center */
+        width: 55% !important; 
+        max-width: 400px;
+        display: block !important;
+        margin: 30px auto !important;
+
+        /* 2. Apply Border Radius */
+        border-radius: 50px !important; /* This forces the Pill shape */
+        
+        /* 3. Improve Padding for Touch */
+        padding: 15px 20px !important;
+        font-size: 18px !important;
+
+        /* 4. Fix border conflict from support.css */
+        border: 8px solid #5656b3 !important;
+    }
 }
 
 /* --- Tablet specific (Optional) --- */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .btn-primary {
         width: 40% !important;
+    }
+
+    .btn {
+        border-radius: 50px !important;
     }
 }
